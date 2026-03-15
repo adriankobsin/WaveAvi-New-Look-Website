@@ -2,14 +2,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const partners = [
-  "Crestron",
-  "Lutron",
-  "Control4",
-  "Cisco",
-  "Q-SYS",
-  "Starlink",
-  "Peplink",
-  "MTN",
+  { name: "Crestron", url: "https://www.crestron.com" },
+  { name: "Lutron", url: "https://www.lutron.com" },
+  { name: "Control4", url: "https://www.control4.com" },
+  { name: "Cisco", url: "https://www.cisco.com" },
+  { name: "Q-SYS", url: "https://www.qsys.com" },
+  { name: "Starlink", url: "https://www.starlink.com" },
+  { name: "Peplink", url: "https://www.peplink.com" },
+  { name: "MTN", url: "https://www.mtn.com" },
 ];
 
 const TechnologyPartners = () => {
@@ -40,17 +40,20 @@ const TechnologyPartners = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {partners.map((partner, i) => (
-            <motion.div
-              key={partner}
+            <motion.a
+              key={partner.name}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="glass-card flex items-center justify-center p-8 h-28 hover:border-ocean/30 hover:bg-ocean/5 transition-all duration-500 group"
+              className="glass-card flex items-center justify-center p-8 h-28 hover:border-ocean/30 hover:bg-ocean/5 transition-all duration-500 group cursor-pointer"
             >
               <span className="text-sm font-body font-medium tracking-[0.2em] uppercase text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                {partner}
+                {partner.name}
               </span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
