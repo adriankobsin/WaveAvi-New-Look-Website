@@ -41,7 +41,7 @@ const GlobalPresence = () => {
   const selected = offices[selectedIndex];
 
   return (
-    <section id="global" className="relative py-32 md:py-44" ref={ref}>
+    <section id="global-presence" className="relative py-32 md:py-44" ref={ref}>
       <div className="section-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
