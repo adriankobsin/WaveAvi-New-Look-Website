@@ -41,23 +41,15 @@ const TechnologyPartners = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {partners.map((partner, i) => (
             <motion.div
-              key={partner.name}
+              key={partner}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.06 }}
               className="glass-card flex items-center justify-center p-8 h-28 hover:border-ocean/30 hover:bg-ocean/5 transition-all duration-500 group"
             >
-              {partner.logo ? (
-                <img 
-                  src={partner.logo} 
-                  alt={`${partner.name} logo`}
-                  className="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              ) : (
-                <span className="text-sm font-body font-medium tracking-[0.2em] uppercase text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                  {partner.name}
-                </span>
-              )}
+              <span className="text-sm font-body font-medium tracking-[0.2em] uppercase text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                {partner}
+              </span>
             </motion.div>
           ))}
         </div>
