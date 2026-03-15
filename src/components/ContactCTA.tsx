@@ -45,7 +45,7 @@ const ContactCTA = () => {
                 className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
                 aria-label="WhatsApp Adrian Kobsin"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={24} />
               </a>
             </p>
             <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
@@ -57,7 +57,7 @@ const ContactCTA = () => {
                 className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
                 aria-label="WhatsApp Stephen Hobbs"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={24} />
               </a>
             </p>
           </div>
