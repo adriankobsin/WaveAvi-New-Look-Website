@@ -41,7 +41,7 @@ const BrandIntro = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
               {[
-                { value: "150+", label: "Projects" },
+                { value: "50+", label: "Projects" },
                 { value: "4", label: "Global Offices" },
                 { value: "20+", label: "Years Experience" },
               ].map((stat, i) => (
