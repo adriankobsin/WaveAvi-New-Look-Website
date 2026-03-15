@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BrandIntro from "@/components/BrandIntro";
@@ -10,8 +9,7 @@ import GlobalPresence from "@/components/GlobalPresence";
 import InnovationSection from "@/components/InnovationSection";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
-
-const YachtScene = lazy(() => import("@/components/YachtScene"));
+import YachtScene from "@/components/YachtScene";
 
 const Index = () => {
   return (
@@ -24,9 +22,7 @@ const Index = () => {
       <IndustriesSection />
       <div className="glow-line" />
       <TechnologyPartners />
-      <Suspense fallback={null}>
-        <YachtScene />
-      </Suspense>
+      <YachtScene />
       <div className="glow-line" />
       <ProjectsSection />
       <div className="glow-line" />
