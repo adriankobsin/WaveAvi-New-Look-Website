@@ -58,6 +58,15 @@ const ContactCTA = () => {
               >
                 <WhatsAppIcon size={16} />
               </a>
+              <a
+                href="https://www.linkedin.com/in/adrian-kobsin-20510a78/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[hsl(210,80%,55%)] hover:text-[hsl(210,80%,65%)] transition-colors"
+                aria-label="LinkedIn Adrian Kobsin"
+              >
+                <LinkedInIcon size={16} />
+              </a>
             </p>
             <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
               <span className="text-foreground/70">Stephen Hobbs - Director</span> — +447488293738 • stephen.hobbs@waveavi.com
