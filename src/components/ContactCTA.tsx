@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { MessageCircle } from "lucide-react";
 
 const ContactCTA = () => {
   const ref = useRef(null);
