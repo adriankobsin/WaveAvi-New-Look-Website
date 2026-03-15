@@ -5,7 +5,7 @@ import techRoom from "@/assets/technology-room.jpg";
 const techSpecs = [
   { label: "AV Zones", value: "32+" },
   { label: "Network Nodes", value: "128" },
-  { label: "Bandwidth", value: "10Gbps" },
+  { label: "Bandwidth", value: "40Gbps" },
   { label: "Uptime SLA", value: "99.9%" },
 ];
 
