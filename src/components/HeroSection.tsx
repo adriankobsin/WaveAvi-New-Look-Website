@@ -1,22 +1,27 @@
 import { motion } from "framer-motion";
+import heroVideo from "@/assets/hero-video.mp4";
 import heroImage from "@/assets/hero-yacht.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Luxury superyacht with advanced technology systems"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroImage}
           className="w-full h-full object-cover"
-          loading="eager"
-        />
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div
           className="absolute inset-0"
           style={{ background: "var(--gradient-hero)" }}
         />
-        <div className="absolute inset-0 bg-background/40" />
+        <div className="absolute inset-0 bg-background/30" />
       </div>
 
       {/* Content */}
