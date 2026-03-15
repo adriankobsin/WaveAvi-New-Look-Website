@@ -30,6 +30,18 @@ const ContactCTA = () => {
           >
             Get In Touch
           </a>
+          
+          <div className="mt-12 space-y-3">
+            <p className="text-sm font-body text-muted-foreground">
+              <span className="text-foreground/70">Main Contact</span> — info@waveavi.com
+            </p>
+            <p className="text-sm font-body text-muted-foreground">
+              <span className="text-foreground/70">Adrian Kobsin - Director</span> — +447701316513 • adrian.kobsin@waveavi.com
+            </p>
+            <p className="text-sm font-body text-muted-foreground">
+              <span className="text-foreground/70">Stephen Hobbs - Director</span> — +447488293738 • stephen.hobbs@waveavi.com
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
