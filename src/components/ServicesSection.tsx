@@ -85,8 +85,8 @@ const ServicesSection = () => {
           <div className="luxury-divider mt-8" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.slice(0, 6).map((service, i) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,6 @@ const ServicesSection = () => {
               onMouseLeave={() => setActiveIndex(null)}
               className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 cursor-default relative overflow-hidden"
             >
-              {/* Glow effect on hover */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br from-ocean/5 to-transparent transition-opacity duration-500 ${
                   activeIndex === i ? "opacity-100" : "opacity-0"
@@ -113,7 +112,6 @@ const ServicesSection = () => {
                 <p className="text-sm font-body font-light text-muted-foreground leading-relaxed mb-4">
                   {service.description}
                 </p>
-                {/* Feature tags */}
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((f) => (
                     <span
@@ -128,6 +126,51 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {(() => {
+          const consultancy = services[6];
+          const ConsultancyIcon = consultancy.icon;
+          return (
+            <div className="flex justify-center mt-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 6 * 0.08 }}
+                onMouseEnter={() => setActiveIndex(6)}
+                onMouseLeave={() => setActiveIndex(null)}
+                className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 cursor-default relative overflow-hidden w-full md:w-1/2 lg:w-1/3"
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br from-ocean/5 to-transparent transition-opacity duration-500 ${
+                    activeIndex === 6 ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+                <div className="relative z-10">
+                  <ConsultancyIcon
+                    className="w-8 h-8 text-ocean mb-6 group-hover:scale-110 transition-transform duration-300"
+                    strokeWidth={1.2}
+                  />
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">
+                    {consultancy.title}
+                  </h3>
+                  <p className="text-sm font-body font-light text-muted-foreground leading-relaxed mb-4">
+                    {consultancy.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {consultancy.features.map((f) => (
+                      <span
+                        key={f}
+                        className="text-[10px] font-body tracking-[0.15em] uppercase px-2 py-1 border border-border/50 text-muted-foreground"
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          );
+        })()}
       </div>
     </section>
   );
