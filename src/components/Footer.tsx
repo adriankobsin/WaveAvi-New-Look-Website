@@ -91,13 +91,18 @@ const Footer = () => {
             © {new Date().getFullYear()} Wave-AVI. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            {["Privacy", "Terms", "Cookies"].map((link) => (
-              <span
-                key={link}
-                className="text-xs font-body text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            {[
+              { label: "Privacy", to: "/privacy" },
+              { label: "Terms", to: "/terms" },
+              { label: "Cookies", to: "/cookies" },
+            ].map((link) => (
+              <Link
+                key={link.label}
+                to={link.to}
+                className="text-xs font-body text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link}
-              </span>
+                {link.label}
+              </Link>
             ))}
           </div>
         </div>
