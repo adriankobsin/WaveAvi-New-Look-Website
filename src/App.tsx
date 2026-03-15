@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import Cookies from "./pages/Cookies.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const queryClient = new QueryClient();
 
