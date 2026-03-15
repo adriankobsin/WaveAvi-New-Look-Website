@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroVideo from "@/assets/hero-video.mp4";
-import heroImage from "@/assets/hero-yacht.jpg";
 
 const HeroSection = () => {
   return (
@@ -12,7 +11,6 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          poster={heroImage}
           className="w-full h-full object-cover"
         >
           <source src={heroVideo} type="video/mp4" />
