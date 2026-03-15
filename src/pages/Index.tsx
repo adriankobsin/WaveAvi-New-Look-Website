@@ -20,9 +20,6 @@ const Index = () => {
       <IndustriesSection />
       <div className="glow-line" />
       <TechnologyPartners />
-      <YachtScene />
-      <div className="glow-line" />
-      <ProjectsSection />
       <div className="glow-line" />
       <GlobalPresence />
       <InnovationSection />
