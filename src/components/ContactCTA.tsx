@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { MessageCircle } from "lucide-react";
 
 const ContactCTA = () => {
   const ref = useRef(null);
@@ -35,11 +36,29 @@ const ContactCTA = () => {
             <p className="text-sm font-body text-muted-foreground">
               <span className="text-foreground/70">Main Contact</span> — info@waveavi.com
             </p>
-            <p className="text-sm font-body text-muted-foreground">
+            <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
               <span className="text-foreground/70">Adrian Kobsin - Director</span> — +447701316513 • adrian.kobsin@waveavi.com
+              <a
+                href="https://wa.me/447701316513"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
+                aria-label="WhatsApp Adrian Kobsin"
+              >
+                <MessageCircle size={16} />
+              </a>
             </p>
-            <p className="text-sm font-body text-muted-foreground">
+            <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
               <span className="text-foreground/70">Stephen Hobbs - Director</span> — +447488293738 • stephen.hobbs@waveavi.com
+              <a
+                href="https://wa.me/447488293738"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
+                aria-label="WhatsApp Stephen Hobbs"
+              >
+                <MessageCircle size={16} />
+              </a>
             </p>
           </div>
         </motion.div>
