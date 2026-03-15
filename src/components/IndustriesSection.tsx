@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Anchor, Home, Hotel, Ship } from "lucide-react";
+import { Anchor, Home, Hotel } from "lucide-react";
 import yachtAerial from "@/assets/yacht-aerial.jpg";
 
 const industries = [
