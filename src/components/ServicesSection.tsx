@@ -58,7 +58,7 @@ const services = [
     title: "Technical Consultancy",
     description:
       "Expert guidance from concept through commissioning and beyond. Specification, design and project management.",
-    features: ["Design", "Specification", "PM"],
+    features: ["Design", "Specification", "PM", "Owner's Tech Rep", "Technical Surveying"],
   },
 ];
 
