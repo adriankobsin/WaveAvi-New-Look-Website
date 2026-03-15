@@ -41,9 +41,7 @@ const HeroSection = () => {
             <br />
             <span className="text-gradient-ocean">Beyond the Horizon</span>
           </h1>
-          <p className="text-base md:text-lg font-body font-light text-silver max-w-2xl mb-10 leading-relaxed">Advanced AV, IT and Connectivity Systems for the World's Most Exceptional Yachts and Luxury Residence.
-
-
+          <p className="text-base md:text-lg font-body font-light text-silver max-w-2xl mb-10 leading-relaxed">Advanced AV, IT and Connectivity Systems for the World's Most Exceptional Yachts and Luxury Residences.
           </p>
           <a
             href="#services"
