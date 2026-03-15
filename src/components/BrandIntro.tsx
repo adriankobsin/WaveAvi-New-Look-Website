@@ -16,8 +16,8 @@ const BrandIntro = () => {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
+            
             <span className="text-xs font-body tracking-[0.3em] uppercase text-ocean mb-6 block">
               The Technology Authority
             </span>
@@ -41,16 +41,16 @@ const BrandIntro = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
               {[
-                { value: "50+", label: "Projects" },
-                { value: "4", label: "Global Offices" },
-                { value: "20+", label: "Years Experience" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                >
+              { value: "50+", label: "Projects" },
+              { value: "4", label: "Global Offices" },
+              { value: "20+", label: "Years Experience" }].
+              map((stat, i) =>
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}>
+                
                   <p className="text-2xl md:text-3xl font-display font-semibold text-ocean">
                     {stat.value}
                   </p>
@@ -58,7 +58,7 @@ const BrandIntro = () => {
                     {stat.label}
                   </p>
                 </motion.div>
-              ))}
+              )}
             </div>
           </motion.div>
 
@@ -67,25 +67,25 @@ const BrandIntro = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
+            className="relative">
+            
             <div className="relative overflow-hidden">
               <motion.img
                 src={interiorImage}
                 alt="Advanced yacht bridge technology"
                 className="w-full h-[400px] md:h-[500px] object-cover"
                 loading="lazy"
-                style={{ y: imageY }}
-              />
+                style={{ y: imageY }} />
+              
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-ocean/20" />
-            <div className="absolute -top-4 -right-4 w-16 h-16 border border-ocean/10" />
+            
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default BrandIntro;
