@@ -2,14 +2,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const partners = [
-  "Crestron",
-  "Lutron",
-  "Control4",
-  "Cisco",
-  "Q-SYS",
-  "Starlink",
-  "Peplink",
-  "MTN",
+  { name: "Crestron", url: "https://www.crestron.com" },
+  { name: "Lutron", url: "https://www.lutron.com" },
+  { name: "Control4", url: "https://www.control4.com" },
+  { name: "Cisco", url: "https://www.cisco.com" },
+  { name: "Q-SYS", url: "https://www.qsys.com" },
+  { name: "Starlink", url: "https://www.starlink.com" },
+  { name: "Peplink", url: "https://www.peplink.com" },
+  { name: "MTN", url: "https://www.mtn.com" },
 ];
 
 const TechnologyPartners = () => {
