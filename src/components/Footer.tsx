@@ -2,7 +2,7 @@ import logoGrey from "@/assets/logo-grey.png";
 
 const entities = [
   { name: "Adrian Kobsin - Director", location: "+447701316513 • adrian.kobsin@waveavi.com" },
-  { name: "Stephen Hobbs - Director", location: "+447488293738" },
+  { name: "Stephen Hobbs - Director", location: "+447488293738 • stephen.hobbs@waveavi.com" },
   { name: "Wave-AVI BV", location: "Netherlands" },
   { name: "Wave-AVI Thailand", location: "Thailand" },
   { name: "Wave-AVI Singapore", location: "Singapore" },
