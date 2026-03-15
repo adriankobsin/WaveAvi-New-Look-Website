@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoGrey from "@/assets/logo-grey.png";
 
 const entities = [
