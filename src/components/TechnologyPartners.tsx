@@ -2,14 +2,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const partners = [
-  { name: "Crestron", logo: "/logos/crestron-logo.jpg" },
-  { name: "Lutron", logo: null },
-  { name: "Control4", logo: null },
-  { name: "Cisco", logo: null },
-  { name: "Q-SYS", logo: null },
-  { name: "Starlink", logo: null },
-  { name: "Peplink", logo: null },
-  { name: "MTN", logo: null },
+  "Crestron",
+  "Lutron",
+  "Control4",
+  "Cisco",
+  "Q-SYS",
+  "Starlink",
+  "Peplink",
+  "MTN",
 ];
 
 const TechnologyPartners = () => {
