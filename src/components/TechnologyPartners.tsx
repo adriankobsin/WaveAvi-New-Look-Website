@@ -9,7 +9,7 @@ const partners = [
   { name: "Q-SYS", url: "https://www.qsys.com" },
   { name: "Starlink", url: "https://www.starlink.com" },
   { name: "Peplink", url: "https://www.peplink.com" },
-  { name: "MTN", url: "https://www.mtn.com" },
+  { name: "MTN SAT", url: "https://mtnsat.com/" },
 ];
 
 const TechnologyPartners = () => {
