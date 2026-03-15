@@ -7,22 +7,22 @@ import yachtAerial from "@/assets/yacht-aerial.jpg";
 
 const projects = [
   {
-    title: "M/Y Horizon",
-    category: "85m New Build",
+    title: "M/Y Medialy",
+    category: "46M REFIT",
     scope: "Full AV, IT & Connectivity Integration",
     tech: ["Crestron", "Cisco", "VSAT", "Lutron"],
     image: techRoom,
   },
   {
-    title: "M/Y Celestial",
-    category: "62m Refit",
+    title: "Mangusta Oceano 50",
+    category: "50M REFIT",
     scope: "Complete Technology Upgrade",
-    tech: ["Control4", "Q-SYS", "Starlink"],
+    tech: ["CRESTRON", "Q-SYS", "Starlink"],
     image: heroYacht,
   },
   {
     title: "M/Y Aurora",
-    category: "120m New Build",
+    category: "60M NEW BUILD",
     scope: "Enterprise IT & Cybersecurity",
     tech: ["Cisco", "Peplink", "Crestron"],
     image: yachtInterior,
