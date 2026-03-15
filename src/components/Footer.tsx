@@ -1,3 +1,5 @@
+import logoGrey from "@/assets/logo-grey.png";
+
 const entities = [
   { name: "Wave-AVI Ltd", location: "United Kingdom" },
   { name: "Wave-AVI BV", location: "Netherlands" },
@@ -12,13 +14,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xl font-display font-bold tracking-wider text-foreground">
-                WAVE
-              </span>
-              <span className="text-xl font-display font-light tracking-wider text-ocean">
-                AVI
-              </span>
+            <div className="mb-6">
+              <img src={logoGrey} alt="Wave-AVI" className="h-12 w-auto" />
             </div>
             <p className="text-sm font-body font-light text-muted-foreground max-w-sm leading-relaxed mb-8">
               The technology authority for superyachts. Advanced AV, IT and
