@@ -37,7 +37,7 @@ const services = [
     title: "Lighting Control",
     description:
       "Intelligent lighting systems that transform spaces and atmospheres with scene-based control.",
-    features: ["Lutron", "DALI", "Scene Control"],
+    features: ["Lutron", "DALI", "DMX CONTROL"],
   },
   {
     icon: Shield,
