@@ -1,13 +1,15 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import interiorImage from "@/assets/yacht-interior.jpg";
 
 const BrandIntro = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="about" className="relative py-32 md:py-44" ref={ref}>
+    <section id="about" className="relative py-32 md:py-44 overflow-hidden" ref={ref}>
       <div className="section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Text */}
@@ -26,18 +28,41 @@ const BrandIntro = () => {
             </h2>
             <div className="luxury-divider !mx-0 mb-8" />
             <p className="text-base font-body font-light text-muted-foreground leading-relaxed mb-6">
-              Wave-AVI is a global engineering consultancy delivering advanced
-              AV, IT, connectivity, security and automation systems for
-              superyachts and luxury environments.
+              Wave-AVI delivers advanced technology systems for superyachts,
+              luxury residences and high-end hospitality environments. Our
+              expertise combines marine engineering, enterprise networking and
+              intelligent automation.
             </p>
-            <p className="text-base font-body font-light text-muted-foreground leading-relaxed">
+            <p className="text-base font-body font-light text-muted-foreground leading-relaxed mb-10">
               From new builds to refits, we design, engineer and integrate
               complete technology ecosystems that define the future of maritime
               luxury.
             </p>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
+              {[
+                { value: "150+", label: "Projects" },
+                { value: "4", label: "Global Offices" },
+                { value: "20+", label: "Years Experience" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                >
+                  <p className="text-2xl md:text-3xl font-display font-semibold text-ocean">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground mt-1">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Image */}
+          {/* Image with parallax */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -45,15 +70,17 @@ const BrandIntro = () => {
             className="relative"
           >
             <div className="relative overflow-hidden">
-              <img
+              <motion.img
                 src={interiorImage}
                 alt="Advanced yacht bridge technology"
                 className="w-full h-[400px] md:h-[500px] object-cover"
                 loading="lazy"
+                style={{ y: imageY }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-ocean/20" />
+            <div className="absolute -top-4 -right-4 w-16 h-16 border border-ocean/10" />
           </motion.div>
         </div>
       </div>

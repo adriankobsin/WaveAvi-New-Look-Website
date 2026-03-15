@@ -3,13 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#" },
   { label: "Services", href: "#services" },
-  { label: "Industries", href: "#industries" },
-  { label: "Technology", href: "#technology" },
   { label: "Projects", href: "#projects" },
-  { label: "Global", href: "#global" },
-  { label: "Innovation", href: "#innovation" },
+  { label: "Technology", href: "#technology" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 

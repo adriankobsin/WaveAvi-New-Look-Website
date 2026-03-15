@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Monitor,
   Network,
@@ -15,49 +15,57 @@ const services = [
     icon: Monitor,
     title: "Marine AV Systems",
     description:
-      "Immersive audio-visual experiences engineered for the marine environment.",
+      "Immersive audio-visual experiences engineered for the marine environment. Cinema rooms, distributed audio and outdoor entertainment.",
+    features: ["4K/8K Distribution", "Dolby Atmos", "Outdoor AV"],
   },
   {
     icon: Network,
-    title: "IT Infrastructure & Networking",
+    title: "IT Infrastructure",
     description:
-      "Enterprise-grade networks designed for reliability at sea.",
+      "Enterprise-grade networks designed for reliability at sea. Full rack builds, server rooms, and managed services.",
+    features: ["Cisco Networks", "Rack Systems", "Managed IT"],
   },
   {
     icon: Satellite,
-    title: "Global Connectivity",
+    title: "Connectivity & VSAT",
     description:
-      "VSAT, Starlink and 5G solutions for seamless worldwide coverage.",
+      "VSAT, Starlink and 5G solutions for seamless worldwide coverage wherever you sail.",
+    features: ["Starlink", "VSAT", "5G/LTE"],
   },
   {
     icon: Lightbulb,
     title: "Lighting Control",
     description:
-      "Intelligent lighting systems that transform spaces and atmospheres.",
+      "Intelligent lighting systems that transform spaces and atmospheres with scene-based control.",
+    features: ["Lutron", "DALI", "Scene Control"],
   },
   {
     icon: Shield,
     title: "Security & Surveillance",
     description:
-      "Advanced CCTV and cybersecurity for total protection.",
+      "Advanced CCTV, access control and cybersecurity for total onboard protection.",
+    features: ["CCTV", "Cybersecurity", "Access Control"],
   },
   {
     icon: Cpu,
     title: "Smart Automation",
     description:
-      "Unified control systems for effortless vessel management.",
+      "Unified control systems via Crestron and Control4 for effortless vessel management.",
+    features: ["Crestron", "Control4", "KNX"],
   },
   {
     icon: Wrench,
     title: "Technical Consultancy",
     description:
-      "Expert guidance from concept through commissioning and beyond.",
+      "Expert guidance from concept through commissioning and beyond. Specification, design and project management.",
+    features: ["Design", "Specification", "PM"],
   },
 ];
 
 const ServicesSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section id="services" className="relative py-32 md:py-44" ref={ref}>
@@ -84,18 +92,39 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 cursor-default"
+              onMouseEnter={() => setActiveIndex(i)}
+              onMouseLeave={() => setActiveIndex(null)}
+              className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 cursor-default relative overflow-hidden"
             >
-              <service.icon
-                className="w-8 h-8 text-ocean mb-6 group-hover:scale-110 transition-transform duration-300"
-                strokeWidth={1.2}
+              {/* Glow effect on hover */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br from-ocean/5 to-transparent transition-opacity duration-500 ${
+                  activeIndex === i ? "opacity-100" : "opacity-0"
+                }`}
               />
-              <h3 className="text-lg font-display font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-sm font-body font-light text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+              <div className="relative z-10">
+                <service.icon
+                  className="w-8 h-8 text-ocean mb-6 group-hover:scale-110 transition-transform duration-300"
+                  strokeWidth={1.2}
+                />
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm font-body font-light text-muted-foreground leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                {/* Feature tags */}
+                <div className="flex flex-wrap gap-2">
+                  {service.features.map((f) => (
+                    <span
+                      key={f}
+                      className="text-[10px] font-body tracking-[0.15em] uppercase px-2 py-1 border border-border/50 text-muted-foreground"
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
