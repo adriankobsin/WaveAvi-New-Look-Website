@@ -7,7 +7,7 @@ const industries = [
   { icon: Anchor, title: "Superyachts", desc: "New builds & refits from 30m to 180m+" },
   { icon: Home, title: "Luxury Residences", desc: "Smart home technology for ultra-prime properties" },
   { icon: Hotel, title: "Resorts & Beach Clubs", desc: "Immersive AV and automation for hospitality" },
-  { icon: Ship, title: "Hospitality", desc: "Enterprise systems for commercial and Hospitality" },
+  { icon: Hotel, title: "Hospitality", desc: "Enterprise systems for commercial and Hospitality" },
 ];
 
 const IndustriesSection = () => {
