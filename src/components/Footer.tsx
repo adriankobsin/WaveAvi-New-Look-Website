@@ -1,3 +1,5 @@
+import logoGrey from "@/assets/logo-grey.png";
+
 const entities = [
   { name: "Wave-AVI Ltd", location: "United Kingdom" },
   { name: "Wave-AVI BV", location: "Netherlands" },
