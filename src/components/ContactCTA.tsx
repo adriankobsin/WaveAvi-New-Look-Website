@@ -79,6 +79,15 @@ const ContactCTA = () => {
               >
                 <WhatsAppIcon size={16} />
               </a>
+              <a
+                href="https://www.linkedin.com/in/steve-hobbs-b3096a27/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[hsl(210,80%,55%)] hover:text-[hsl(210,80%,65%)] transition-colors"
+                aria-label="LinkedIn Stephen Hobbs"
+              >
+                <LinkedInIcon size={16} />
+              </a>
             </p>
           </div>
         </motion.div>
