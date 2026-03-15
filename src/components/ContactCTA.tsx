@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const WhatsAppIcon = ({ size = 16 }: { size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -36,12 +37,12 @@ const ContactCTA = () => {
             Begin a conversation with our engineering team about your next
             project.
           </p>
-          <a
-            href="mailto:info@waveavi.com"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-3 text-xs font-body font-medium tracking-[0.25em] uppercase bg-ocean text-primary-foreground px-10 py-5 hover:bg-ocean-deep transition-all duration-300"
           >
             Get In Touch
-          </a>
+          </Link>
           
           <div className="mt-12 space-y-3">
             <p className="text-sm font-body text-muted-foreground">
