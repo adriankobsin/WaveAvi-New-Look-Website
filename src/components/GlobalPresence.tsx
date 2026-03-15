@@ -8,7 +8,7 @@ const offices = [
     city: "London",
     country: "United Kingdom",
     address: "Room 105, The Oast, Business Centre, New Road, West Malling, East Malling, ME196BJ",
-    mapQuery: "The+Oast+Business+Centre,+New+Road,+West+Malling,+ME19+6BJ,+UK",
+    mapQuery: "The+Oast,+New+Road,+East+Malling,+West+Malling,+Kent+ME19+6BJ",
   },
   {
     entity: "Wave-AVI B.V.",
