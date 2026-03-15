@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Anchor, Home, Palmtree, Ship } from "lucide-react";
+import { Anchor, Home, Hotel, Ship } from "lucide-react";
 import yachtAerial from "@/assets/yacht-aerial.jpg";
 
 const industries = [
   { icon: Anchor, title: "Superyachts", desc: "New builds & refits from 30m to 180m+" },
   { icon: Home, title: "Luxury Residences", desc: "Smart home technology for ultra-prime properties" },
-  { icon: Palmtree, title: "Resorts & Beach Clubs", desc: "Immersive AV and automation for hospitality" },
+  { icon: Hotel, title: "Resorts & Beach Clubs", desc: "Immersive AV and automation for hospitality" },
   { icon: Ship, title: "Commercial Marine", desc: "Enterprise systems for commercial fleets" },
 ];
 
