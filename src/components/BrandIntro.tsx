@@ -80,6 +80,7 @@ const BrandIntro = () => {
                 <source src={wheelhouseVideo.url} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background" />
             </div>
             
             
