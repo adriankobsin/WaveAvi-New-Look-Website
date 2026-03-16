@@ -7,6 +7,7 @@ const offices = [
     entity: "Wave-AVI Ltd.",
     city: "London",
     country: "United Kingdom",
+    flag: "🇬🇧",
     address: "Room 105, The Oast, Business Centre, New Road, West Malling, East Malling, ME196BJ",
     mapQuery: "The+Oast,+New+Road,+East+Malling,+West+Malling,+Kent+ME19+6BJ",
   },
@@ -14,6 +15,7 @@ const offices = [
     entity: "Wave-AVI B.V.",
     city: "Haarlem",
     country: "Netherlands",
+    flag: "🇳🇱",
     address: "Tappersweg 6 F, 2031ET Haarlem, Nederland",
     mapQuery: "Tappersweg+6F,+2031ET+Haarlem,+Netherlands",
   },
@@ -21,6 +23,7 @@ const offices = [
     entity: "Wave-AVI Co. Ltd.",
     city: "Phuket",
     country: "Thailand",
+    flag: "🇹🇭",
     address: "100 22 M.5 Srisoonthorn Rd, Tambon Choeng Thale, Phuket, 83110",
     mapQuery: "Srisoonthorn+Rd,+Choeng+Thale,+Phuket+83110,+Thailand",
   },
@@ -28,6 +31,7 @@ const offices = [
     entity: "Wave-AVI Pte. Ltd.",
     city: "Singapore",
     country: "Singapore",
+    flag: "🇸🇬",
     address: "68 Circular Road, #02-01, 049422, Singapore",
     mapQuery: "68+Circular+Road,+Singapore+049422",
   },
@@ -92,8 +96,9 @@ const GlobalPresence = () => {
                     : "hover:ring-1 hover:ring-border"
                 }`}
               >
+                <span className="text-2xl mb-2 block">{office.flag}</span>
                 <MapPin
-                  className={`w-5 h-5 mx-auto mb-3 transition-colors ${
+                  className={`w-4 h-4 mx-auto mb-3 transition-colors ${
                     selectedIndex === i ? "text-ocean" : "text-muted-foreground"
                   }`}
                   strokeWidth={1.2}
