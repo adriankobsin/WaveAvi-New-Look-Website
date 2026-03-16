@@ -70,13 +70,15 @@ const BrandIntro = () => {
             className="relative">
             
             <div className="relative overflow-hidden">
-              <motion.img
-                src={interiorImage}
-                alt="Advanced yacht bridge technology"
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-[400px] md:h-[500px] object-cover"
-                loading="lazy"
-                style={{ y: imageY }} />
-              
+              >
+                <source src={wheelhouseVideo.url} type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
             
