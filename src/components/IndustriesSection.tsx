@@ -1,13 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Anchor, Home, Hotel } from "lucide-react";
+import { Link } from "react-router-dom";
 import yachtAerial from "@/assets/yacht-aerial.jpg";
 
 const industries = [
-  { icon: Anchor, title: "Superyachts", desc: "New builds & refits from 30m to 180m+" },
-  { icon: Home, title: "Luxury Residences", desc: "Smart home technology for ultra-prime properties" },
-  { icon: Hotel, title: "Resorts & Beach Clubs", desc: "Immersive AV and automation for hospitality" },
-  { icon: Hotel, title: "Hospitality", desc: "Enterprise systems for commercial and Hospitality" },
+  { icon: Anchor, title: "Superyachts", desc: "New builds & refits from 30m to 180m+", to: "/marine" },
+  { icon: Home, title: "Luxury Residences", desc: "Smart home technology for ultra-prime properties", to: "/residential" },
+  { icon: Hotel, title: "Resorts & Beach Clubs", desc: "Immersive AV and automation for hospitality", to: "/commercial" },
+  { icon: Hotel, title: "Hospitality", desc: "Enterprise systems for commercial and Hospitality", to: "/commercial" },
 ];
 
 const IndustriesSection = () => {
@@ -58,9 +59,15 @@ const IndustriesSection = () => {
               <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                 {ind.title}
               </h3>
-              <p className="text-sm font-body font-light text-muted-foreground">
+              <p className="text-sm font-body font-light text-muted-foreground mb-4">
                 {ind.desc}
               </p>
+              <Link
+                to={ind.to}
+                className="inline-flex items-center gap-1 text-xs font-body tracking-wide text-ocean hover:text-[hsl(210,80%,65%)] transition-colors"
+              >
+                Learn more →
+              </Link>
             </motion.div>
           ))}
         </div>
