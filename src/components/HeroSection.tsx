@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroVideo from "@/assets/hero-video.mp4";
+import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
 
 const HeroSection = () => {
   return (
@@ -13,7 +13,7 @@ const HeroSection = () => {
           playsInline
           className="w-full h-full object-cover">
           
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideoAsset.url} type="video/mp4" />
         </video>
         <div
           className="absolute inset-0"
