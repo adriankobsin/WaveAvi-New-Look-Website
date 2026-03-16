@@ -49,7 +49,29 @@ const ContactCTA = () => {
               <span className="text-foreground/70">Main Contact</span> — info@waveavi.com
             </p>
             <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-foreground/70">Adrian Kobsin - Director</span> — +447701316513 • adrian.kobsin@waveavi.com
+              <span className="text-foreground/70">Adrian Kobsin - Director</span> — adrian.kobsin@waveavi.com
+              <a
+                href="https://www.linkedin.com/in/adrian-kobsin-20510a78/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[hsl(210,80%,55%)] hover:text-[hsl(210,80%,65%)] transition-colors"
+                aria-label="LinkedIn Adrian Kobsin"
+              >
+                <LinkedInIcon size={16} />
+              </a>
+            </p>
+            <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-foreground/70">Stephen Hobbs - Director</span> — stephen.hobbs@waveavi.com
+              <a
+                href="https://www.linkedin.com/in/steve-hobbs-b3096a27/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[hsl(210,80%,55%)] hover:text-[hsl(210,80%,65%)] transition-colors"
+                aria-label="LinkedIn Stephen Hobbs"
+              >
+                <LinkedInIcon size={16} />
+              </a>
+            </p>
               <a
                 href="https://wa.me/447701316513"
                 target="_blank"
