@@ -71,6 +71,7 @@ const ContactCTA = () => {
               >
                 <LinkedInIcon size={16} />
               </a>
+            </p>
           </div>
         </motion.div>
       </div>
