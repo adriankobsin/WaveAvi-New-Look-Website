@@ -53,11 +53,11 @@ const newsItems = [
     featured: false,
   },
   {
-    category: "Achievement",
-    date: "December 2025",
-    title: "Wave-avi Recognised at Monaco Yacht Show",
+    category: "Expansion",
+    date: "April 2026",
+    title: "New Technology Experience Centre Opening in Phuket",
     excerpt:
-      "Our innovative approach to onboard connectivity was highlighted at the annual Monaco Yacht Show, earning recognition from industry leaders.",
+      "Wave avi Co. Ltd. is opening a new Technology Experience Centre in Phuket, Thailand — launching in April to coincide with Thai Songkran New Year celebrations.",
     featured: false,
   },
 ];
