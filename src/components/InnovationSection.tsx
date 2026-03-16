@@ -156,9 +156,14 @@ const InnovationSection = () => {
                 <p className="text-sm font-body font-light text-muted-foreground leading-relaxed">
                   {featured.excerpt}
                 </p>
-                <div className="mt-8 flex items-center gap-2 text-xs font-body tracking-[0.2em] uppercase text-ocean group-hover:gap-4 transition-all duration-300">
-                  Read the feature <ArrowRight className="w-3.5 h-3.5" />
-                </div>
+                <a
+                  href="https://elevation88.app.box.com/s/1oevu10ck9xquzdchn0kf5ntbb61hg1r"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 flex items-center gap-2 text-xs font-body tracking-[0.2em] uppercase text-ocean group-hover:gap-4 transition-all duration-300"
+                >
+                  Read the feature — Page 52 <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
               {/* Magazine pages gallery */}
