@@ -37,7 +37,7 @@ const Navbar = () => {
         }`}
       >
         <div className="section-padding flex items-center justify-between h-20">
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex items-center -ml-4">
             <img src={logoWhite} alt="Wave-AVI" className="h-14 w-auto" />
           </a>
 
