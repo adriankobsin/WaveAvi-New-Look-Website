@@ -6,8 +6,8 @@ import logoWhite from "@/assets/logo-white.png";
 const navItems = [
   { label: "Home", href: "#" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Industries", href: "#industries" },
+  { label: "Services", href: "#services" },
   { label: "Technology", href: "#technology" },
   { label: "Global Presence", href: "#global-presence" },
   { label: "Innovation", href: "#innovation" },
