@@ -79,7 +79,7 @@ const BrandIntro = () => {
               
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-ocean/20" />
+            
             
           </motion.div>
         </div>
