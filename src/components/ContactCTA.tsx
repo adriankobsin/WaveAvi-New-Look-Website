@@ -49,16 +49,7 @@ const ContactCTA = () => {
               <span className="text-foreground/70">Main Contact</span> — info@waveavi.com
             </p>
             <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-foreground/70">Adrian Kobsin - Director</span> — +447701316513 • adrian.kobsin@waveavi.com
-              <a
-                href="https://wa.me/447701316513"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
-                aria-label="WhatsApp Adrian Kobsin"
-              >
-                <WhatsAppIcon size={16} />
-              </a>
+              <span className="text-foreground/70">Adrian Kobsin - Director</span> — adrian.kobsin@waveavi.com
               <a
                 href="https://www.linkedin.com/in/adrian-kobsin-20510a78/"
                 target="_blank"
@@ -70,16 +61,7 @@ const ContactCTA = () => {
               </a>
             </p>
             <p className="text-sm font-body text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-foreground/70">Stephen Hobbs - Director</span> — +447488293738 • stephen.hobbs@waveavi.com
-              <a
-                href="https://wa.me/447488293738"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-green-500 hover:text-green-400 transition-colors"
-                aria-label="WhatsApp Stephen Hobbs"
-              >
-                <WhatsAppIcon size={16} />
-              </a>
+              <span className="text-foreground/70">Stephen Hobbs - Director</span> — stephen.hobbs@waveavi.com
               <a
                 href="https://www.linkedin.com/in/steve-hobbs-b3096a27/"
                 target="_blank"
