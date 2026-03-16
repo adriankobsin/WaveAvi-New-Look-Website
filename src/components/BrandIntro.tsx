@@ -1,6 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import interiorImage from "@/assets/yacht-interior.jpg";
+import wheelhouseVideo from "@/assets/wheelhouse-video.mp4.asset.json";
 
 const BrandIntro = () => {
   const ref = useRef(null);
