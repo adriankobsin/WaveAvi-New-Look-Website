@@ -96,7 +96,7 @@ const GlobalPresence = () => {
                     : "hover:ring-1 hover:ring-border"
                 }`}
               >
-                <span className="text-2xl mb-2 block">{office.flag}</span>
+                <span className="inline-block text-xs font-body font-semibold tracking-wider text-ocean bg-ocean/10 border border-ocean/20 rounded px-2 py-1 mb-2">{office.country === "United Kingdom" ? "UK" : office.country === "Netherlands" ? "NL" : office.country === "Thailand" ? "TH" : "SG"}</span>
                 <MapPin
                   className={`w-4 h-4 mx-auto mb-3 transition-colors ${
                     selectedIndex === i ? "text-ocean" : "text-muted-foreground"
