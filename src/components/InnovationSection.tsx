@@ -45,11 +45,11 @@ const newsItems = [
     featured: false,
   },
   {
-    category: "Technology",
-    date: "January 2026",
-    title: "Partnership with Crestron for Next-Gen Marine Control",
+    category: "Partnership",
+    date: "March 2026",
+    title: "Wave-avi Partners with Obedio Smart Crew Systems",
     excerpt:
-      "Wave-avi announces a deepened partnership with Crestron, bringing cutting-edge vessel automation and control solutions to our clients.",
+      "Wave-avi announces a new partnership with Obedio — the intelligent crew call system for superyachts featuring offline voice-to-text, instant translation in 30+ languages, and nine-month battery life. All processed locally, nothing leaves the vessel.",
     featured: false,
   },
   {
