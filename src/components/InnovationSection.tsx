@@ -5,9 +5,9 @@ import { Brain, Navigation, Zap } from "lucide-react";
 const innovations = [
   {
     icon: Brain,
-    title: "AI-Driven Systems",
+    title: "AI-Tech Support Systems",
     description:
-      "Machine learning algorithms optimise onboard systems in real-time, from energy management to predictive maintenance.",
+      "Machine learning algorithms optimise onboard systems in real-time, from energy management to predictive maintenance, able to help with Technical support of all the available systems onboard.",
   },
   {
     icon: Navigation,
