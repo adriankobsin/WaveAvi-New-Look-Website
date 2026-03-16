@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-react";
+import journalCover from "@/assets/journal-cover.jpg";
+import journalArticle from "@/assets/journal-article.jpg";
+import journalInterview from "@/assets/journal-interview.jpg";
 
 const innovations = [
   {
@@ -25,12 +28,13 @@ const innovations = [
 
 const newsItems = [
   {
-    category: "Project Milestone",
-    date: "March 2026",
-    title: "Wave-avi Completes Full AV Integration on 85m Explorer Yacht",
+    category: "Publication",
+    date: "February 2026",
+    title: "Beyond Luxury: How Wave-AVI is Redefining Yacht Technology",
     excerpt:
-      "Our team delivered a comprehensive audiovisual and IT infrastructure for one of the largest explorer yachts launched this year — featuring 32 independent AV zones and a fully redundant network backbone.",
+      "Wave-AVI featured in The Property & Lifestyle Journal Issue 1. Co-founder Adrian Kobsin discusses the art and science of creating onboard systems that impress even the most demanding guests — from Dolby Atmos cinemas to seamless global connectivity.",
     featured: true,
+    images: [journalCover, journalArticle, journalInterview],
   },
   {
     category: "Company News",
@@ -122,19 +126,18 @@ const InnovationSection = () => {
           <div className="flex-1 h-px bg-border" />
         </motion.div>
 
-        {/* Featured + Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Featured Post */}
-          {featured && (
-            <motion.article
-              initial={{ opacity: 0, x: -30 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="group relative glass-card overflow-hidden border-ocean/10 hover:border-ocean/30 transition-all duration-500 lg:row-span-3"
-            >
-              {/* Accent stripe */}
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-ocean via-ocean/60 to-transparent" />
-              <div className="p-10 md:p-12 flex flex-col h-full">
+        {/* Featured Publication */}
+        {featured && (
+          <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="group relative glass-card overflow-hidden border-ocean/10 hover:border-ocean/30 transition-all duration-500 mb-8"
+          >
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-ocean via-ocean/60 to-transparent" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Text side */}
+              <div className="p-10 md:p-14 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-[10px] font-body tracking-[0.25em] uppercase px-3 py-1.5 border border-ocean/30 text-ocean">
                     {featured.category}
@@ -144,48 +147,81 @@ const InnovationSection = () => {
                     {featured.date}
                   </span>
                 </div>
+                <span className="text-[10px] font-body tracking-[0.2em] uppercase text-muted-foreground mb-3 block">
+                  The Property & Lifestyle Journal — Issue 1
+                </span>
                 <h3 className="text-2xl md:text-3xl font-display font-semibold text-foreground leading-tight mb-6 group-hover:text-ocean transition-colors duration-300">
                   {featured.title}
                 </h3>
-                <p className="text-sm font-body font-light text-muted-foreground leading-relaxed flex-1">
+                <p className="text-sm font-body font-light text-muted-foreground leading-relaxed">
                   {featured.excerpt}
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-xs font-body tracking-[0.2em] uppercase text-ocean group-hover:gap-4 transition-all duration-300">
-                  Read more <ArrowRight className="w-3.5 h-3.5" />
+                  Read the feature <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>
-            </motion.article>
-          )}
 
-          {/* Smaller News Cards */}
-          <div className="flex flex-col gap-6">
-            {rest.map((item, i) => (
-              <motion.article
-                key={item.title}
-                initial={{ opacity: 0, x: 30 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.6 + i * 0.12 }}
-                className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
-                    {item.category}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
-                    <Calendar className="w-3 h-3" />
-                    {item.date}
-                  </span>
+              {/* Magazine pages gallery */}
+              {"images" in featured && featured.images && (
+                <div className="relative grid grid-cols-3 gap-3 p-6 lg:p-8">
+                  {featured.images.map((img, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20, rotate: i === 0 ? -2 : i === 2 ? 2 : 0 }}
+                      animate={
+                        inView
+                          ? { opacity: 1, y: 0, rotate: i === 0 ? -2 : i === 2 ? 2 : 0 }
+                          : {}
+                      }
+                      transition={{ duration: 0.5, delay: 0.7 + i * 0.15 }}
+                      className="relative overflow-hidden shadow-2xl shadow-background/80 hover:scale-105 hover:z-10 transition-transform duration-500"
+                      style={{
+                        transformOrigin: i === 0 ? "bottom right" : i === 2 ? "bottom left" : "center",
+                      }}
+                    >
+                      <img
+                        src={img}
+                        alt={`The Property & Lifestyle Journal - Page ${i + 1}`}
+                        className="w-full h-full object-cover aspect-[3/4]"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+                    </motion.div>
+                  ))}
                 </div>
-                <h4 className="text-lg font-display font-semibold text-foreground mb-3 group-hover:text-ocean transition-colors duration-300">
-                  {item.title}
-                </h4>
-                <p className="text-sm font-body font-light text-muted-foreground leading-relaxed line-clamp-2">
-                  {item.excerpt}
-                </p>
-              </motion.article>
-            ))}
-          </div>
+              )}
+            </div>
+          </motion.article>
+        )}
+
+        {/* Other News Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {rest.map((item, i) => (
+            <motion.article
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.12 }}
+              className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
+                  {item.category}
+                </span>
+                <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
+                  <Calendar className="w-3 h-3" />
+                  {item.date}
+                </span>
+              </div>
+              <h4 className="text-lg font-display font-semibold text-foreground mb-3 group-hover:text-ocean transition-colors duration-300">
+                {item.title}
+              </h4>
+              <p className="text-sm font-body font-light text-muted-foreground leading-relaxed line-clamp-2">
+                {item.excerpt}
+              </p>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
