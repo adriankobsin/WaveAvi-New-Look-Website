@@ -16,8 +16,8 @@ const Index = () => {
       <HeroSection />
       <BrandIntro />
       <div className="glow-line" />
-      <ServicesSection />
       <IndustriesSection />
+      <ServicesSection />
       <div className="glow-line" />
       <TechnologyPartners />
       <div className="glow-line" />
