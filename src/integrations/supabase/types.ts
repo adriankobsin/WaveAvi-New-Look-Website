@@ -14,7 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      seo_alerts: {
+        Row: {
+          alert_type: string
+          created_at: string
+          details: Json | null
+          email_sent: boolean
+          id: string
+          message: string
+          severity: string
+        }
+        Insert: {
+          alert_type: string
+          created_at?: string
+          details?: Json | null
+          email_sent?: boolean
+          id?: string
+          message: string
+          severity?: string
+        }
+        Update: {
+          alert_type?: string
+          created_at?: string
+          details?: Json | null
+          email_sent?: boolean
+          id?: string
+          message?: string
+          severity?: string
+        }
+        Relationships: []
+      }
+      seo_snapshots: {
+        Row: {
+          captured_at: string
+          clicks_7d: number
+          ctr_7d: number
+          id: string
+          impressions_7d: number
+          position_7d: number
+          raw: Json | null
+          site_url: string
+          sitemap_errors: number
+          sitemap_indexed: number
+          sitemap_last_downloaded: string | null
+          sitemap_submitted: number
+          sitemap_warnings: number
+          snapshot_date: string
+        }
+        Insert: {
+          captured_at?: string
+          clicks_7d?: number
+          ctr_7d?: number
+          id?: string
+          impressions_7d?: number
+          position_7d?: number
+          raw?: Json | null
+          site_url?: string
+          sitemap_errors?: number
+          sitemap_indexed?: number
+          sitemap_last_downloaded?: string | null
+          sitemap_submitted?: number
+          sitemap_warnings?: number
+          snapshot_date: string
+        }
+        Update: {
+          captured_at?: string
+          clicks_7d?: number
+          ctr_7d?: number
+          id?: string
+          impressions_7d?: number
+          position_7d?: number
+          raw?: Json | null
+          site_url?: string
+          sitemap_errors?: number
+          sitemap_indexed?: number
+          sitemap_last_downloaded?: string | null
+          sitemap_submitted?: number
+          sitemap_warnings?: number
+          snapshot_date?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
