@@ -96,6 +96,9 @@ const Residential = () => (
     sectorTitle="Luxury Residences"
     subtitle="Smart home technology for ultra-prime properties, engineered for elegance and effortless living."
     services={services}
+    path="/residential"
+    seoTitle="Smart Home & Luxury Residential AV | Wave-AVI"
+    seoDescription="Discreet smart home, AV, lighting and control systems for ultra-prime residences. Crestron and Control4 expertise."
   />
 );
 
