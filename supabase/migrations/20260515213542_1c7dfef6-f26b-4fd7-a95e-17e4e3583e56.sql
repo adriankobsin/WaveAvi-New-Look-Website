@@ -1,0 +1,2 @@
+create policy "deny all client access" on public.seo_snapshots for all to anon, authenticated using (false) with check (false);
+create policy "deny all client access" on public.seo_alerts for all to anon, authenticated using (false) with check (false);
