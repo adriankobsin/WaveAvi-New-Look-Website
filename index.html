@@ -38,8 +38,10 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
       .goog-te-banner-frame.skiptranslate,
-      iframe.goog-te-banner-frame { display: none !important; visibility: hidden !important; }
-      body { top: 0 !important; position: static !important; }
+      iframe.goog-te-banner-frame,
+      iframe.skiptranslate { display: none !important; visibility: hidden !important; height: 0 !important; }
+      body { top: 0 !important; position: static !important; margin-top: 0 !important; }
+      html { margin-top: 0 !important; }
       .goog-tooltip, .goog-tooltip:hover { display: none !important; }
       .goog-text-highlight { background: none !important; box-shadow: none !important; }
       #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
