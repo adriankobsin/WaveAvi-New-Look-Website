@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
+import LanguageSelector from "./LanguageSelector";
 
 const navItems = [
   { label: "Home", href: "#" },
@@ -52,16 +53,21 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
+            <LanguageSelector />
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden text-foreground"
-            aria-label="Open menu"
-          >
-            <Menu size={24} />
-          </button>
+          {/* Mobile actions */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <LanguageSelector />
+
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="text-foreground"
+              aria-label="Open menu"
+            >
+              <Menu size={24} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 
