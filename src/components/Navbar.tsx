@@ -60,14 +60,14 @@ const Navbar = () => {
           <div className="flex items-center gap-3 lg:hidden">
             <LanguageSelector />
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden text-foreground"
-            aria-label="Open menu"
-          >
-            <Menu size={24} />
-          </button>
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="text-foreground"
+              aria-label="Open menu"
+            >
+              <Menu size={24} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 
