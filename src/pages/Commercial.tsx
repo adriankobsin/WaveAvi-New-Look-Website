@@ -96,6 +96,9 @@ const Commercial = () => (
     sectorTitle="Commercial & Hospitality"
     subtitle="Enterprise AV, conferencing, and smart building systems for hospitality, resorts, and commercial environments."
     services={services}
+    path="/commercial"
+    seoTitle="Commercial & Hospitality AV Systems | Wave-AVI"
+    seoDescription="Enterprise AV, digital signage, conferencing and smart building systems for hotels, resorts and commercial venues."
   />
 );
 

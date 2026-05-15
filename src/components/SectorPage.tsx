@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Seo from "./Seo";
 
 export interface SubService {
   title: string;
@@ -17,6 +18,9 @@ interface SectorPageProps {
   sectorTitle: string;
   subtitle: string;
   services: SubService[];
+  seoTitle: string;
+  seoDescription: string;
+  path: string;
 }
 
 const ServiceCard = ({ service, index }: { service: SubService; index: number }) => {
@@ -69,12 +73,26 @@ const ServiceCard = ({ service, index }: { service: SubService; index: number })
   );
 };
 
-const SectorPage = ({ sectorLabel, sectorTitle, subtitle, services }: SectorPageProps) => {
+const SectorPage = ({ sectorLabel, sectorTitle, subtitle, services, seoTitle, seoDescription, path }: SectorPageProps) => {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, margin: "-40px" });
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={seoTitle}
+        description={seoDescription}
+        path={path}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: sectorTitle,
+          description: seoDescription,
+          provider: { "@type": "Organization", name: "Wave-AVI", url: "https://www.waveavi.com" },
+          areaServed: "Worldwide",
+          url: `https://www.waveavi.com${path}`,
+        }}
+      />
       <Navbar />
 
       <section className="pt-32 pb-20 md:pt-44 md:pb-32">

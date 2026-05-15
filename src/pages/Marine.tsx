@@ -96,6 +96,9 @@ const Marine = () => (
     sectorTitle="Superyacht Technology"
     subtitle="Advanced AV, IT, and control systems engineered for the world's most exceptional vessels."
     services={services}
+    path="/marine"
+    seoTitle="Superyacht AV & IT Engineering | Wave-AVI Marine"
+    seoDescription="Marine-grade AV, IT, connectivity, control and security systems engineered for superyachts and luxury vessels worldwide."
   />
 );
 

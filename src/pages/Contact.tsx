@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -55,6 +56,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Contact Wave-AVI | Project Enquiries"
+        description="Get in touch with the Wave-AVI engineering team about your superyacht, residential or commercial AV and IT project."
+        path="/contact"
+      />
       <div className="section-padding py-24 md:py-32">
         <div className="max-w-2xl mx-auto">
           <Link

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Gem, Target, Star, Handshake, Rocket } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const values = [
   {
@@ -44,6 +45,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="About Wave-AVI | Marine & Luxury AV Engineering"
+        description="Wave-AVI is a global engineering consultancy specialising in AV, IT and control systems for superyachts, luxury residences and commercial environments."
+        path="/about"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20 md:pt-44 md:pb-32">
