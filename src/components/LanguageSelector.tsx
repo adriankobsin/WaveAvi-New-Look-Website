@@ -24,32 +24,52 @@ const languages = [
   { code: "th", label: "ไทย" },
 ];
 
-const getCurrentLang = (): string => {
-  const match = document.cookie.match(/googtrans=\/[a-zA-Z-]+\/([a-zA-Z-]+)/);
-  return match?.[1] ?? "en";
-};
+const STORAGE_KEY = "wave_lang";
 
-const setGoogleLang = (code: string) => {
-  const host = window.location.hostname;
-  const domain = host.split(".").slice(-2).join(".");
-  const value = `/en/${code}`;
-  const expires = "; expires=" + new Date(Date.now() + 31536000000).toUTCString();
-  // Clear previous cookies on all domain scopes
-  ["", `; domain=${host}`, `; domain=.${host}`, `; domain=.${domain}`].forEach((d) => {
-    document.cookie = `googtrans=;${d}; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-  });
-  document.cookie = `googtrans=${value}; path=/${expires}`;
-  document.cookie = `googtrans=${value}; domain=.${host}; path=/${expires}`;
-  document.cookie = `googtrans=${value}; domain=.${domain}; path=/${expires}`;
-  window.location.reload();
+const triggerTranslate = (code: string) => {
+  // Try the Google Translate <select> first
+  const select = document.querySelector<HTMLSelectElement>("select.goog-te-combo");
+  if (select) {
+    select.value = code === "en" ? "" : code;
+    select.dispatchEvent(new Event("change"));
+    return true;
+  }
+  return false;
 };
 
 const LanguageSelector = () => {
-  const [current, setCurrent] = useState("en");
+  const [current, setCurrent] = useState<string>(() => {
+    if (typeof window === "undefined") return "en";
+    return localStorage.getItem(STORAGE_KEY) || "en";
+  });
 
+  // Apply saved language once Google Translate widget is ready
   useEffect(() => {
-    setCurrent(getCurrentLang());
-  }, []);
+    if (current === "en") return;
+    let attempts = 0;
+    const id = window.setInterval(() => {
+      attempts += 1;
+      if (triggerTranslate(current) || attempts > 40) {
+        window.clearInterval(id);
+      }
+    }, 250);
+    return () => window.clearInterval(id);
+  }, [current]);
+
+  const handleSelect = (code: string) => {
+    localStorage.setItem(STORAGE_KEY, code);
+    setCurrent(code);
+    if (code === "en") {
+      // Restore: clearing requires a reload because Google Translate
+      // doesn't restore original DOM cleanly.
+      window.location.reload();
+      return;
+    }
+    if (!triggerTranslate(code)) {
+      // Widget not ready — reload, the effect will pick it up
+      window.location.reload();
+    }
+  };
 
   const active = languages.find((l) => l.code === current) ?? languages[0];
 
@@ -63,11 +83,14 @@ const LanguageSelector = () => {
         <Globe size={14} />
         <span>{active.code.toUpperCase().split("-")[0]}</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-xl border-border/50 max-h-[70vh] overflow-y-auto">
+      <DropdownMenuContent
+        align="end"
+        className="bg-background/95 backdrop-blur-xl border-border/50 max-h-[70vh] overflow-y-auto z-[200]"
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setGoogleLang(lang.code)}
+            onClick={() => handleSelect(lang.code)}
             className="notranslate cursor-pointer flex items-center justify-between gap-4"
             translate="no"
           >
