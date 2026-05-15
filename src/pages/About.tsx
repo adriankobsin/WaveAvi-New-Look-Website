@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Gem, Target, Star, Handshake, Rocket } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const values = [
   {
