@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
+import LanguageSelector from "./LanguageSelector";
 
 const navItems = [
   { label: "Home", href: "#" },
