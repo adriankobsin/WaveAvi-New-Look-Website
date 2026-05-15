@@ -1,0 +1,18 @@
+# Wave-AVI
+
+> Wave-AVI is a global engineering consultancy delivering advanced AV, IT, connectivity, security and automation systems for superyachts, luxury residences and commercial environments.
+
+## Pages
+
+- [Home](/): Overview of Wave-AVI services, industries and global presence.
+- [About](/about): Our philosophy, mission and values.
+- [Marine](/marine): Superyacht AV, IT and control system engineering.
+- [Residential](/residential): Smart home and AV systems for ultra-prime residences.
+- [Commercial](/commercial): Hospitality, conferencing and smart building systems.
+- [Contact](/contact): Get in touch with our engineering team.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)
+- [Cookie Policy](/cookies)
