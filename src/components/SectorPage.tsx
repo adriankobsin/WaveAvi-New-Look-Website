@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Seo from "./Seo";
 
 export interface SubService {
   title: string;
@@ -17,6 +18,9 @@ interface SectorPageProps {
   sectorTitle: string;
   subtitle: string;
   services: SubService[];
+  seoTitle: string;
+  seoDescription: string;
+  path: string;
 }
 
 const ServiceCard = ({ service, index }: { service: SubService; index: number }) => {
