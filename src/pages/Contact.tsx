@@ -55,6 +55,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Contact Wave-AVI | Project Enquiries"
+        description="Get in touch with the Wave-AVI engineering team about your superyacht, residential or commercial AV and IT project."
+        path="/contact"
+      />
       <div className="section-padding py-24 md:py-32">
         <div className="max-w-2xl mx-auto">
           <Link

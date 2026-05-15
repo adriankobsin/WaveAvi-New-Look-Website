@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Terms of Service | Wave-AVI"
+        description="The terms governing use of the Wave-AVI website and services across our global marine technology entities."
+        path="/terms"
+      />
       <div className="section-padding py-20 max-w-4xl mx-auto">
         <Link
           to="/"

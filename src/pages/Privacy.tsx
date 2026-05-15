@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Privacy Policy | Wave-AVI"
+        description="How Wave-AVI collects, uses and protects your personal data across our UK, Netherlands, Thailand and Singapore entities."
+        path="/privacy"
+      />
       <div className="section-padding py-20 max-w-4xl mx-auto">
         <Link
           to="/"
