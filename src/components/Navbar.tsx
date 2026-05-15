@@ -53,7 +53,12 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
+            <LanguageSelector />
           </div>
+
+          {/* Mobile actions */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <LanguageSelector />
 
           {/* Mobile Toggle */}
           <button
