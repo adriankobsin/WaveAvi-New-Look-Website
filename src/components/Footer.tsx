@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import logoGrey from "@/assets/logo-grey.png";
 
 const entities = [
-  { name: "Wave-avi Ltd.", location: "United Kingdom" },
+  { name: "Wave-AVI Ltd.", location: "United Kingdom" },
   { name: "Wave AVI BV", location: "Netherlands" },
-  { name: "Wave avi Co. Ltd.", location: "Thailand" },
-  { name: "Wave avi Pti. Ltd. Singapore", location: "Singapore" },
+  { name: "Wave AVI Co. Ltd.", location: "Thailand" },
+  { name: "Wave AVI Pte. Ltd.", location: "Singapore" },
 ];
 
 const Footer = () => {
