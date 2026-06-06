@@ -1,5 +1,6 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useAnimationFrame } from "framer-motion";
+import { useRef, useState } from "react";
+
 import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-react";
 import journalCover from "@/assets/journal-cover.jpg";
 import journalArticle from "@/assets/journal-article.jpg";
@@ -199,38 +200,84 @@ const InnovationSection = () => {
           </motion.article>
         )}
 
-        {/* Other News Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {rest.map((item, i) => (
-            <motion.article
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.8 + i * 0.12 }}
-              className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
-                  {item.category}
-                </span>
-                <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
-                  <Calendar className="w-3 h-3" />
-                  {item.date}
-                </span>
-              </div>
-              <h4 className="text-lg font-display font-semibold text-foreground mb-3 group-hover:text-ocean transition-colors duration-300">
-                {item.title}
-              </h4>
-              <p className="text-sm font-body font-light text-muted-foreground leading-relaxed line-clamp-2">
-                {item.excerpt}
-              </p>
-            </motion.article>
-          ))}
-        </div>
+        {/* Other News - Auto-scrolling Ticker */}
+        <NewsTicker items={rest} inView={inView} />
       </div>
     </section>
   );
 };
+
+type NewsItem = (typeof newsItems)[number];
+
+const NewsTicker = ({ items, inView }: { items: NewsItem[]; inView: boolean }) => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const [paused, setPaused] = useState(false);
+
+  // Duplicate items so the marquee loops seamlessly
+  const loop = [...items, ...items, ...items];
+
+  useAnimationFrame((_, delta) => {
+    if (!trackRef.current || paused) return;
+    const speed = 40; // px per second
+    offsetRef.current -= (speed * delta) / 1000;
+    const halfWidth = trackRef.current.scrollWidth / 3;
+    if (-offsetRef.current >= halfWidth * 2) {
+      offsetRef.current += halfWidth;
+    }
+    trackRef.current.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+  });
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: 0.8 }}
+      className="relative overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+
+      <div ref={trackRef} className="flex gap-6 will-change-transform">
+        {loop.map((item, i) => (
+          <a
+            key={`${item.title}-${i}`}
+            href="#innovation"
+            onClick={() => setPaused(true)}
+            className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden shrink-0 w-[320px] md:w-[380px] cursor-pointer"
+          >
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
+                {item.category}
+              </span>
+              <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
+                <Calendar className="w-3 h-3" />
+                {item.date}
+              </span>
+            </div>
+            <h4 className="text-lg font-display font-semibold text-foreground mb-3 group-hover:text-ocean transition-colors duration-300">
+              {item.title}
+            </h4>
+            <p className="text-sm font-body font-light text-muted-foreground leading-relaxed line-clamp-3">
+              {item.excerpt}
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 text-[10px] font-body tracking-[0.2em] uppercase text-ocean opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Read more <ArrowRight className="w-3 h-3" />
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <p className="text-center text-[10px] font-body tracking-[0.25em] uppercase text-muted-foreground mt-6">
+        Hover to pause · Click to read
+      </p>
+    </motion.div>
+  );
+};
+
 
 export default InnovationSection;
