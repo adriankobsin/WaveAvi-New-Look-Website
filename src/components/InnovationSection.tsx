@@ -15,9 +15,9 @@ const innovations = [
   },
   {
     icon: Navigation,
-    title: "Marine Navigation AI",
+    title: "AI Monitoring and Support System",
     description:
-      "Next-generation navigation intelligence combining satellite data, weather patterns and route optimisation.",
+      "WaveGuard AI, an intelligent onboard monitoring and troubleshooting platform designed to assist engineers and crew in managing increasingly complex yacht systems.",
   },
   {
     icon: Zap,
