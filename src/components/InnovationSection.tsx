@@ -61,6 +61,14 @@ const newsItems = [
       "Wave avi Co. Ltd. is opening a new Technology Experience Centre in Phuket, Thailand — launching in April to coincide with Thai Songkran New Year celebrations.",
     featured: false,
   },
+  {
+    category: "Technology",
+    date: "June 2026",
+    title: "Wave Guard — The Future of Intelligent Yacht Security",
+    excerpt:
+      "Wave AVI unveils Wave Guard, a revolutionary AI-powered platform that transforms how superyachts think, sense and protect. Autonomous threat detection, predictive anomaly intelligence, and real-time decision-making at the edge — all running silently in the background so owners experience nothing but absolute peace of mind.",
+    featured: false,
+  },
 ];
 
 const InnovationSection = () => {
