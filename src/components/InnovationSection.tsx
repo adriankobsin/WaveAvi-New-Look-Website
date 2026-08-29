@@ -48,6 +48,10 @@ const newsItems = [
     excerpt:
       "Wave AVI has officially opened its Cambodia operation in Phnom Penh, extending our Asia-Pacific presence alongside Thailand and Singapore and bringing marine-grade AV, IT and control engineering to the region's hospitality and residential markets.",
     featured: false,
+    gallery: [
+      { src: phnomPenhSkyline, caption: "Phnom Penh — our newest Asia-Pacific hub" },
+      { src: cambodiaOffice, caption: "Engineering and systems design studio" },
+    ],
   },
   {
     category: "Project",
@@ -56,8 +60,13 @@ const newsItems = [
     excerpt:
       "Our first delivered project in Cambodia: a complete audio, video and control installation for the Arena Central Sports Bar in Phnom Penh — large-format screens, multi-zone distributed audio, live sports feed distribution and simple one-touch control for staff.",
     featured: false,
+    gallery: [
+      { src: arenaCentralBar, caption: "Large-format screen wall and multi-zone audio" },
+      { src: avControlRack, caption: "Rack room and one-touch staff control" },
+    ],
   },
   {
+
 
     category: "Company News",
     date: "February 2026",
