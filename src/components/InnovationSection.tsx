@@ -5,6 +5,10 @@ import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-
 import journalCover from "@/assets/journal-cover.jpg";
 import journalArticle from "@/assets/journal-article.jpg";
 import journalInterview from "@/assets/journal-interview.jpg";
+import phnomPenhSkyline from "@/assets/news-phnom-penh-skyline.jpg";
+import cambodiaOffice from "@/assets/news-cambodia-office.jpg";
+import arenaCentralBar from "@/assets/news-arena-central-bar.jpg";
+import avControlRack from "@/assets/news-av-control-rack.jpg";
 
 const innovations = [
   {
@@ -44,6 +48,10 @@ const newsItems = [
     excerpt:
       "Wave AVI has officially opened its Cambodia operation in Phnom Penh, extending our Asia-Pacific presence alongside Thailand and Singapore and bringing marine-grade AV, IT and control engineering to the region's hospitality and residential markets.",
     featured: false,
+    gallery: [
+      { src: phnomPenhSkyline, caption: "Phnom Penh — our newest Asia-Pacific hub" },
+      { src: cambodiaOffice, caption: "Engineering and systems design studio" },
+    ],
   },
   {
     category: "Project",
@@ -52,8 +60,13 @@ const newsItems = [
     excerpt:
       "Our first delivered project in Cambodia: a complete audio, video and control installation for the Arena Central Sports Bar in Phnom Penh — large-format screens, multi-zone distributed audio, live sports feed distribution and simple one-touch control for staff.",
     featured: false,
+    gallery: [
+      { src: arenaCentralBar, caption: "Large-format screen wall and multi-zone audio" },
+      { src: avControlRack, caption: "Rack room and one-touch staff control" },
+    ],
   },
   {
+
 
     category: "Company News",
     date: "February 2026",
@@ -275,6 +288,26 @@ const NewsTicker = ({ items, inView }: { items: NewsItem[]; inView: boolean }) =
             className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden shrink-0 w-[320px] md:w-[380px] cursor-pointer"
           >
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {"gallery" in item && item.gallery && (
+              <div className="grid grid-cols-2 gap-2 mb-6 -mt-2">
+                {item.gallery.map((shot) => (
+                  <figure key={shot.src} className="relative overflow-hidden">
+                    <img
+                      src={shot.src}
+                      alt={shot.caption}
+                      width={1024}
+                      height={768}
+                      loading="lazy"
+                      className="w-full h-24 md:h-28 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                    <figcaption className="absolute bottom-0 left-0 right-0 p-2 text-[9px] font-body tracking-[0.12em] uppercase text-muted-foreground leading-tight">
+                      {shot.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
             <div className="flex items-center gap-3 mb-4">
               <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
                 {item.category}
