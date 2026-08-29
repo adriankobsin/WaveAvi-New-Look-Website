@@ -317,9 +317,13 @@ const NewsTicker = ({ items, inView }: { items: NewsItem[]; inView: boolean }) =
                 ))}
               </div>
             )}
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
                 {item.category}
+              </span>
+              <span className="flex items-center gap-1 text-[10px] font-body tracking-[0.2em] uppercase px-2.5 py-1 border border-ocean/20 text-ocean/90 bg-ocean/5 group-hover:border-ocean/40 transition-colors duration-300">
+                <BadgeCheck className="w-3 h-3" />
+                {item.badge}
               </span>
               <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
                 <Calendar className="w-3 h-3" />
