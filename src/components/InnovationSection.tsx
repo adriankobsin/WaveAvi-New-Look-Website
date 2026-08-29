@@ -182,9 +182,13 @@ const InnovationSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Text side */}
               <div className="p-10 md:p-14 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
                   <span className="text-[10px] font-body tracking-[0.25em] uppercase px-3 py-1.5 border border-ocean/30 text-ocean">
                     {featured.category}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5 border border-ocean/20 text-ocean/90 bg-ocean/5">
+                    <BadgeCheck className="w-3 h-3" />
+                    {featured.badge}
                   </span>
                   <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
                     <Calendar className="w-3 h-3" />
