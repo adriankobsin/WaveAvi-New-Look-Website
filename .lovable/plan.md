@@ -1,30 +1,21 @@
-## Goal
+# Add Cambodia news updates to Latest from Wave-AVI
 
-Authorize the Google Search Console connector for this project and verify ownership of `https://www.waveavi.com/` so the site can receive Search Console data and the sitemap can be submitted.
+Two new entries in the auto-scrolling news ticker on the homepage Innovation & News section.
 
-## Steps
+## New items
 
-1. **Link the connector** — call `standard_connectors--connect` with `connector_id: "google_search_console"`. You'll be prompted to sign in to Google and approve access. Use the Google account that should own the Search Console property.
+**1. Wave AVI opens in Phnom Penh, Cambodia**
+- Category: Company News
+- Marks the official opening of Wave AVI's Cambodia operation, extending the Asia-Pacific presence alongside Thailand and Singapore.
 
-2. **Request a META verification token** — once linked, call the Site Verification API through the Lovable connector gateway to get a `google-site-verification` meta tag value for `https://www.waveavi.com/`.
+**2. First Cambodia project delivered — Arena Central Sports Bar**
+- Category: Project
+- Wave AVI's first delivered project in Cambodia: a full audio, video and control installation for the Arena Central Sports Bar in Phnom Penh — large-format screens, multi-zone distributed audio, live sports feed distribution and simple one-touch control for staff.
 
-3. **Embed the meta tag** — add the returned tag to `index.html` inside `<head>`:
-   ```html
-   <meta name="google-site-verification" content="<TOKEN>" />
-   ```
+Wording stays generic on technical detail since exact system specifics weren't confirmed. Send me the real scope (screen sizes, brands, zones) or any confirmed venue details and I'll swap the copy in.
 
-4. **Republish the site** — Google fetches the live URL when verifying, so the meta tag must be present in the deployed HTML at `https://www.waveavi.com/` before step 5. You'll need to click Publish.
+## Technical notes
 
-5. **Trigger verification** — call the Site Verification `webResource` endpoint with the same identifier and `META` method. A 200 means Google confirmed ownership.
-
-6. **Add the site to Search Console** — `PUT` `https://www.waveavi.com/` to the `webmasters/v3/sites/` endpoint so it appears in your Search Console property list.
-
-7. **Submit the sitemap** — `PUT` `https://www.waveavi.com/sitemap.xml` to the `webmasters/v3/sites/{site}/sitemaps/` endpoint so Google starts crawling all routes.
-
-8. **Mark the GSC SEO finding fixed** — once verification + sitemap submission succeed, update the `gsc:gsc` finding via `seo_chat--update_findings`.
-
-## Notes
-
-- Verification only works against the live published site, not the preview URL. If you'd rather verify the preview domain instead, say so and I'll target `sea-tech-ambition.lovable.app` instead of `www.waveavi.com`.
-- The connector uses your Google account's OAuth — it's tied to whoever signs in during step 1. Make sure that Google account is the one you want owning the Search Console property.
-- No code changes happen until step 3, and the only file touched is `index.html` (one meta tag).
+- Edit `src/components/InnovationSection.tsx` only: add two objects to the `newsItems` array (`category`, `date`, `title`, `excerpt`, `featured: false`).
+- Placed first among the non-featured items so they lead the ticker; existing featured journal article is unchanged.
+- No new images, routes or backend changes.
