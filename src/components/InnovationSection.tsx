@@ -288,6 +288,26 @@ const NewsTicker = ({ items, inView }: { items: NewsItem[]; inView: boolean }) =
             className="group glass-card p-8 hover:border-ocean/30 transition-all duration-500 relative overflow-hidden shrink-0 w-[320px] md:w-[380px] cursor-pointer"
           >
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-ocean/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {"gallery" in item && item.gallery && (
+              <div className="grid grid-cols-2 gap-2 mb-6 -mt-2">
+                {item.gallery.map((shot) => (
+                  <figure key={shot.src} className="relative overflow-hidden">
+                    <img
+                      src={shot.src}
+                      alt={shot.caption}
+                      width={1024}
+                      height={768}
+                      loading="lazy"
+                      className="w-full h-24 md:h-28 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                    <figcaption className="absolute bottom-0 left-0 right-0 p-2 text-[9px] font-body tracking-[0.12em] uppercase text-muted-foreground leading-tight">
+                      {shot.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
             <div className="flex items-center gap-3 mb-4">
               <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
                 {item.category}
