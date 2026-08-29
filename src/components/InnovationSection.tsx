@@ -5,6 +5,10 @@ import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-
 import journalCover from "@/assets/journal-cover.jpg";
 import journalArticle from "@/assets/journal-article.jpg";
 import journalInterview from "@/assets/journal-interview.jpg";
+import phnomPenhSkyline from "@/assets/news-phnom-penh-skyline.jpg";
+import cambodiaOffice from "@/assets/news-cambodia-office.jpg";
+import arenaCentralBar from "@/assets/news-arena-central-bar.jpg";
+import avControlRack from "@/assets/news-av-control-rack.jpg";
 
 const innovations = [
   {
