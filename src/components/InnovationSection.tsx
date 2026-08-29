@@ -1,7 +1,7 @@
 import { motion, useInView, useAnimationFrame } from "framer-motion";
 import { useRef, useState } from "react";
 
-import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-react";
+import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper, BadgeCheck } from "lucide-react";
 import journalCover from "@/assets/journal-cover.jpg";
 import journalArticle from "@/assets/journal-article.jpg";
 import journalInterview from "@/assets/journal-interview.jpg";
@@ -35,6 +35,7 @@ const newsItems = [
   {
     category: "Publication",
     date: "February 2026",
+    badge: "Verified Press Feature",
     title: "Beyond Luxury: How Wave-AVI is Redefining Yacht Technology",
     excerpt:
       "Wave-AVI featured in The Property & Lifestyle Journal Issue 1. Co-founder Adrian Kobsin discusses the art and science of creating onboard systems that impress even the most demanding guests — from Dolby Atmos cinemas to seamless global connectivity.",
@@ -44,6 +45,7 @@ const newsItems = [
   {
     category: "Company News",
     date: "August 2026",
+    badge: "Official Announcement",
     title: "Wave AVI Officially Opens in Phnom Penh, Cambodia",
     excerpt:
       "Wave AVI has officially opened its Cambodia operation in Phnom Penh, extending our Asia-Pacific presence alongside Thailand and Singapore and bringing marine-grade AV, IT and control engineering to the region's hospitality and residential markets.",
@@ -56,6 +58,7 @@ const newsItems = [
   {
     category: "Project",
     date: "August 2026",
+    badge: "Project Delivered",
     title: "First Cambodia Project Delivered — Arena Central Sports Bar",
     excerpt:
       "Our first delivered project in Cambodia: a complete audio, video and control installation for the Arena Central Sports Bar in Phnom Penh — large-format screens, multi-zone distributed audio, live sports feed distribution and simple one-touch control for staff.",
@@ -66,18 +69,18 @@ const newsItems = [
     ],
   },
   {
-
-
     category: "Company News",
     date: "February 2026",
+    badge: "Official Announcement",
     title: "New Singapore Office Expansion",
     excerpt:
-      "Wave avi Pti. Ltd. Singapore expands operations with a dedicated marine technology hub to serve the growing Asia-Pacific superyacht market.",
+      "Wave AVI Pte. Ltd. Singapore expands operations with a dedicated marine technology hub to serve the growing Asia-Pacific superyacht market.",
     featured: false,
   },
   {
     category: "Partnership",
     date: "March 2026",
+    badge: "Strategic Partnership",
     title: "Wave-avi Partners with Obedio Smart Crew Systems",
     excerpt:
       "Wave-avi announces a new partnership with Obedio — the intelligent crew call system for superyachts featuring offline voice-to-text, instant translation in 30+ languages, and nine-month battery life. All processed locally, nothing leaves the vessel.",
@@ -86,14 +89,16 @@ const newsItems = [
   {
     category: "Expansion",
     date: "April 2026",
+    badge: "Official Announcement",
     title: "New Technology Experience Centre Opening in Phuket",
     excerpt:
-      "Wave avi Co. Ltd. is opening a new Technology Experience Centre in Phuket, Thailand — launching in April to coincide with Thai Songkran New Year celebrations.",
+      "Wave AVI Co. Ltd. is opening a new Technology Experience Centre in Phuket, Thailand — launching in April to coincide with Thai Songkran New Year celebrations.",
     featured: false,
   },
   {
     category: "Technology",
     date: "June 2026",
+    badge: "R&D Update",
     title: "Wave Guard — The Future of Intelligent Yacht Security",
     excerpt:
       "Wave AVI unveils Wave Guard, a revolutionary AI-powered platform that transforms how superyachts think, sense and protect. Autonomous threat detection, predictive anomaly intelligence, and real-time decision-making at the edge — all running silently in the background so owners experience nothing but absolute peace of mind.",
@@ -177,9 +182,13 @@ const InnovationSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Text side */}
               <div className="p-10 md:p-14 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
                   <span className="text-[10px] font-body tracking-[0.25em] uppercase px-3 py-1.5 border border-ocean/30 text-ocean">
                     {featured.category}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5 border border-ocean/20 text-ocean/90 bg-ocean/5">
+                    <BadgeCheck className="w-3 h-3" />
+                    {featured.badge}
                   </span>
                   <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
                     <Calendar className="w-3 h-3" />
@@ -308,9 +317,13 @@ const NewsTicker = ({ items, inView }: { items: NewsItem[]; inView: boolean }) =
                 ))}
               </div>
             )}
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="text-[10px] font-body tracking-[0.25em] uppercase px-2.5 py-1 border border-border text-muted-foreground group-hover:border-ocean/30 group-hover:text-ocean transition-colors duration-300">
                 {item.category}
+              </span>
+              <span className="flex items-center gap-1 text-[10px] font-body tracking-[0.2em] uppercase px-2.5 py-1 border border-ocean/20 text-ocean/90 bg-ocean/5 group-hover:border-ocean/40 transition-colors duration-300">
+                <BadgeCheck className="w-3 h-3" />
+                {item.badge}
               </span>
               <span className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
                 <Calendar className="w-3 h-3" />
