@@ -1,7 +1,7 @@
 import { motion, useInView, useAnimationFrame } from "framer-motion";
 import { useRef, useState } from "react";
 
-import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper } from "lucide-react";
+import { Brain, Navigation, Zap, Calendar, ArrowRight, Newspaper, BadgeCheck } from "lucide-react";
 import journalCover from "@/assets/journal-cover.jpg";
 import journalArticle from "@/assets/journal-article.jpg";
 import journalInterview from "@/assets/journal-interview.jpg";
