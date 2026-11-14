@@ -1,6 +1,7 @@
 // Generates public/sitemap.xml. Wired via predev/prebuild npm scripts.
 import { writeFileSync } from "fs";
 import { resolve } from "path";
+import { newsItems, newsPath } from "../src/data/news";
 
 const BASE_URL = "https://www.waveavi.com";
 
@@ -20,6 +21,7 @@ const entries: SitemapEntry[] = [
   { path: "/privacy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms", changefreq: "yearly", priority: "0.3" },
   { path: "/cookies", changefreq: "yearly", priority: "0.3" },
+  ...newsItems.map((item): SitemapEntry => ({ path: newsPath(item), changefreq: "monthly", priority: "0.7" })),
 ];
 
 const xml = [

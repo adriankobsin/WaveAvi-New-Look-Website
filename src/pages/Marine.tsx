@@ -17,6 +17,18 @@ import type { SubService } from "@/components/SectorPage";
 
 const services: SubService[] = [
   {
+    icon: Lightbulb,
+    title: "Marine Lighting Supply",
+    description:
+      "We supply marine lighting products across Southeast Asia and Europe. Our range includes LEDs, strip LEDs, downlights and other lighting products for vessels, covering interior, exterior and technical spaces. We help match lighting products to the application and project requirements.",
+  },
+  {
+    icon: Shield,
+    title: "Explosion-Proof Marine Lighting",
+    description:
+      "We supply explosion-proof lighting products for marine applications across Southeast Asia and Europe. Product selection is guided by the vessel's hazardous-area classification, installation environment and required documentation, with applicable ratings and certification confirmed for the specific product before supply.",
+  },
+  {
     icon: Monitor,
     title: "Home Cinema",
     description:

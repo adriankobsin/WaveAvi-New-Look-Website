@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
+  ArrowRight,
   Monitor,
   Network,
   Satellite,
@@ -171,6 +174,15 @@ const ServicesSection = () => {
             </div>
           );
         })()}
+
+        <div className="mt-20 border-t border-border pt-12" id="marine-lighting">
+          <span className="text-xs font-body uppercase text-ocean">Product Supply · Southeast Asia & Europe</span>
+          <h3 className="mt-4 text-2xl md:text-3xl font-display font-semibold text-foreground">Marine Lighting Products</h3>
+          <p className="mt-5 max-w-3xl text-sm font-body leading-relaxed text-muted-foreground">
+            LEDs, strip LEDs, downlights and lighting products for marine interiors, exterior decks and technical spaces — including explosion-proof lighting for marine applications. Wave-AVI supplies projects across Southeast Asia and Europe.
+          </p>
+          <Button asChild variant="link" className="mt-5 px-0"><Link to="/marine">Explore marine lighting supply<ArrowRight /></Link></Button>
+        </div>
       </div>
     </section>
   );
