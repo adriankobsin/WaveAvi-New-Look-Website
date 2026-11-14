@@ -15,6 +15,8 @@ import Commercial from "./pages/Commercial.tsx";
 import About from "./pages/About.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
 import CampaignBrief from "./pages/CampaignBrief.tsx";
+import ExperienceCentre from "./pages/ExperienceCentre.tsx";
+import MarineEnquiry from "./pages/MarineEnquiry.tsx";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/marine" element={<Marine />} />
+          <Route path="/marine/enquire" element={<MarineEnquiry />} />
+          <Route path="/experience-centre" element={<ExperienceCentre />} />
           <Route path="/residential" element={<Residential />} />
           <Route path="/commercial" element={<Commercial />} />
           <Route path="/about" element={<About />} />

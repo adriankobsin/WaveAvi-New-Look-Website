@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      project_enquiries: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          enquiry_type: string
+          id: string
+          location: string | null
+          message: string
+          name: string
+          remote_consultation: boolean
+          source_page: string | null
+          timeframe: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          enquiry_type: string
+          id?: string
+          location?: string | null
+          message: string
+          name: string
+          remote_consultation?: boolean
+          source_page?: string | null
+          timeframe?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          enquiry_type?: string
+          id?: string
+          location?: string | null
+          message?: string
+          name?: string
+          remote_consultation?: boolean
+          source_page?: string | null
+          timeframe?: string | null
+        }
+        Relationships: []
+      }
       seo_alerts: {
         Row: {
           alert_type: string
