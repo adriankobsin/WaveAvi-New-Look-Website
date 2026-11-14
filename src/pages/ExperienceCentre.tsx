@@ -5,10 +5,10 @@ import EnquiryForm from "@/components/EnquiryForm";
 const ExperienceCentre = () => (
   <>
     <Seo title="Wave-AVI Technology Experience Centre, Phuket | Register Interest"
-      description="Register your interest in a private consultation at Wave-AVI's new Technology Experience Centre in Phuket, opening for Songkran in April."
+      description="Register your interest in a private consultation at Wave-AVI's new Technology Experience Centre in Phuket, opening in December."
       path="/experience-centre" />
     <LandingShell
-      eyebrow="Phuket · Opening April for Songkran"
+      eyebrow="Phuket · Opening December"
       title="A private setting for effortless technology."
       intro="Wave-AVI's new Technology Experience Centre in Phuket lets villa owners, architects and hospitality developers explore audio-video, entertainment and intelligent control in person — and discuss a specific project with our team."
       points={[
