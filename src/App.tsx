@@ -14,6 +14,7 @@ import Residential from "./pages/Residential.tsx";
 import Commercial from "./pages/Commercial.tsx";
 import About from "./pages/About.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
+import CampaignBrief from "./pages/CampaignBrief.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/commercial" element={<Commercial />} />
           <Route path="/about" element={<About />} />
           <Route path="/news/:slug" element={<NewsArticle />} />
+          <Route path="/campaign-brief" element={<CampaignBrief />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
